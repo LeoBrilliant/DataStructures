@@ -62,7 +62,7 @@ public:
 	T * Data() { return vt.data();}
 
 	//Modifiers
-	void Resize(size_t n) { vt.resize(n); }
+	void Resize(size_t n, const T& t = T()) { vt.resize(n, t);  }
 	void Assign(size_t n, const T &t) { vt.assign(n, t);}
 	void Assign(typename vector<T>::const_iterator& first, typename vector<T>::const_iterator& last)
 	{
