@@ -57,8 +57,8 @@ public:
 	void Clear() { mt.clear(); }
 
 	//Observers
-	multimap<Key, Value>::key_compare KeyCompare() const { return mt.key_comp(); }
-	multimap<Key, Value>::value_compare ValueCompare() const { return mt.value_comp(); }
+	typename multimap<Key, Value>::key_compare KeyCompare() const { return mt.key_comp(); }
+	typename multimap<Key, Value>::value_compare ValueCompare() const { return mt.value_comp(); }
 
 	//Operations
 	MapIter Find(const Key& k) { return mt.find(k); }

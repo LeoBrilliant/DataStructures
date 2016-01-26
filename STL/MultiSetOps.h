@@ -57,8 +57,8 @@ public:
 	void Clear() { st.clear(); }
 
 	//Observers
-	multiset<T>::key_compare KeyCompare() const { return st.key_comp(); }
-	multiset<T>::value_compare ValueCompare() const { return st.value_comp(); }
+	typename multiset<T>::key_compare KeyCompare() const { return st.key_comp(); }
+	typename multiset<T>::value_compare ValueCompare() const { return st.value_comp(); }
 
 	//Operations
 	SetIter Find(const T& k) { return st.find(k); }
