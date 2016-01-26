@@ -23,7 +23,7 @@ public:
 	QueueOps(QueueOps<T, Container> & q): qt(q.GetQt()) { cout << "VectorOps Constructor: Copy" << endl;}
 
 	//Destructor
-	~QueueOps() { while(! qt.empty()) qt.pop(); cout << "DequeOps Destructor: Default" << endl;}
+	~QueueOps() { while(! qt.empty()) qt.pop(); cout << "DequeOps Destructor: Default" << endl; }
 
 	//Capacity
 	bool Empty() const { return qt.empty(); }

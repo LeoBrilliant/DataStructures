@@ -30,6 +30,14 @@ public:
 	}
 
 	//Destructor
+	~PriorityQueueOps()
+	{
+		while(!this->Empty())
+		{
+			this->Pop();
+		}
+		cout << "DequeOps Destructor: Default" << endl;
+	}
 
 	//Capacity
 	bool Empty() const { return pqt.empty(); }
