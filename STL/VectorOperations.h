@@ -32,6 +32,8 @@ public:
 	~VectorOps();
 
 	//Assign content
+	//error: passing 'const VectorOps<double>' as 'this' argument of
+	//VectorOps<T> & operator=(const VectorOps<T> & vo)
 	VectorOps<T> & operator=(VectorOps<T> & vo)
 	{
 		vt = vo.GetVt();
