@@ -15,6 +15,7 @@
 #include <set>
 #include <queue>
 #include <stack>
+#include <valarray>
 
 #include <iostream>
 #include <cstddef>
