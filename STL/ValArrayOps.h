@@ -31,12 +31,12 @@ public:
 	~ValArrayOps() { }
 
 	//Operator
-	valarray<T>& operator=(const valarray<T>& x){ return vt = x; }
-	valarray<T>& operator=(const T& val) { return vt = val; }
-	valarray<T>& operator=(const slice_array<T>& sub){ return vt = sub; }
-	valarray<T>& operator=(const gslice_array<T>& sub){ return vt = sub; }
-	valarray<T>& operator=(const mask_array<T>& sub) { return vt = sub; }
-	valarray<T>& operator=(const indirect_array<T>& sub) { return vt = sub; }
+	ValArrayOps<T>& operator=(valarray<T>& x){ vt = x;  return *this;}
+	ValArrayOps<T>& operator=(const T& val) { vt = val; return *this; }
+	ValArrayOps<T>& operator=(const slice_array<T>& sub){ vt = sub; return *this; }
+	ValArrayOps<T>& operator=(const gslice_array<T>& sub){ vt = sub; return *this; }
+	ValArrayOps<T>& operator=(const mask_array<T>& sub) { vt = sub; return *this; }
+	ValArrayOps<T>& operator=(const indirect_array<T>& sub) { vt = sub; return *this; }
 
 	T operator[](size_t n) const { return vt[n]; }
 	T& operator[](size_t n) { return vt[n]; }
@@ -50,8 +50,8 @@ public:
 	indirect_array<T> operator[](const valarray<size_t>& ind) { return vt[ind]; }
 
 	//Member functions
-	valarray<T>& Apply(T (*func)(T&)){ return vt.apply(func); }
-	valarray<T>& CShift(int n) const { return vt.shift(n); }
+	valarray<T> Apply(T (*func)(T)){ return vt.apply(func); }
+	valarray<T> CShift(int n) const { return vt.shift(n); }
 	T Max() const { return vt.max(); }
 	T Min() const { return vt.min(); }
 	void Resize(size_t sz) { vt.resize(sz); }
@@ -83,7 +83,7 @@ public:
 
 		while(iterBegin != iterEnd)
 		{
-			cout << *iterBegin++ << "<->" ;
+			cout << *iterBegin++ << ", " ;
 		}
 		cout << "]" << endl;
 	}

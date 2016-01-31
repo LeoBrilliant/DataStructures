@@ -14,7 +14,7 @@ int main()
 	printf("Hello DataStructures\n");
 
 	ValArrayOpsTest<int> vtt;
-	vtt.ContructorTest();
+	vtt.TestSuite();
 	//DequeOpsTest();
 	//VectorOpsTest();
 	//STLBasicOpsTest();
