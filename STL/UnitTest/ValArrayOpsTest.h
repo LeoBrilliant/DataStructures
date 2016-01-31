@@ -753,9 +753,9 @@ inline void ValArrayOpsTest<T>::OperatorSquareBracketsTest() {
 
 		valarray<T> va = vao[sl];
 
-		struct {           // function object type:
+/*		struct {           // function object type:
 			void operator() (int i) {std::cout << ' ' << i;}
-		} myobject;
+		} myobject;*/
 
 		//for_each(begin(va), end(va), myobject );
 
@@ -798,12 +798,18 @@ inline void ValArrayOpsTest<T>::OperatorSquareBracketsTest() {
 
 		valarray<T> va = vao[sl];
 
-		struct {           // function object type:
+/*		struct {           // function object type:
 			void operator() (int i) {std::cout << ' ' << i;}
-		} myobject;
+		} myobject;*/
 
 		//for_each(begin(va), end(va), myobject );
-		size_t  base_size = (size_t)(equal(begin(sl), end(sl), myobject));
+		size_t base_size = 0;
+		//base_size = (size_t)(count(begin(sl), end(sl), true));
+		for(size_t i = 0 ; i < sl.size(); ++i)
+		{
+			if(sl[i])
+				++base_size;
+		}
 		equal(begin(va), end(va),  begin(vabase));
 		assert(vabase.size() == base_size);
 		assert(vabase.size() == va.size());
