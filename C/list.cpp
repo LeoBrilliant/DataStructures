@@ -123,7 +123,7 @@ int list_rem_next(List *list, ListElmt *element, void** data)
 	return 0;
 }
 
-void destroy(void *data)
+void list_destroy(void *data)
 {
 	printf("数据被销毁啦\n");
 }
