@@ -8,7 +8,7 @@
 #include "BasicSequenceOperations.h"
 
 template<typename Container>
-void print(Container& c, char* title = "")
+void print(Container& c, const string& title = "")
 {
 	cout << title << ':' << endl;
 	if(c.empty()){
@@ -28,7 +28,7 @@ void print(Container& c, char* title = "")
 			<< endl;
 }
 
-template<typename ContainerOfInt> void basicOps(char *s)
+template<typename ContainerOfInt> void basicOps(const string& s)
 {
 	cout << "--------------- " << s << " ------------------" << endl;
 	typedef ContainerOfInt Ci;

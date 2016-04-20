@@ -129,3 +129,61 @@ void ListTest()
 	cout << "Sum = " << result << endl;
 	cout << "--------------------" << endl;
 }
+
+void SizeOfTest()
+{
+	bool b;
+	char c;
+	int i;
+	float f;
+	double d;
+	void * vp;
+	long l;
+	short s;
+	long int li;
+	long long ll;
+	long double ld;
+	vector<int> vi;
+	void (*fn)();
+
+	cout << "------------------SizeOfTest------------------" << endl;
+	cout << "bool: \t" << sizeof(b) << endl;
+	cout << "char: \t" << sizeof(c) << endl;
+	cout << "int: \t" << sizeof(i) << endl;
+	cout << "float: \t" << sizeof(f) << endl;
+	cout << "double: \t" << sizeof(d) << endl;
+	cout << "void pointer: \t" << sizeof(vp) << endl;
+	cout << "long: \t" << sizeof(l) << endl;
+	cout << "short: \t" << sizeof(s) << endl;
+	cout << "long int: \t" << sizeof(li) << endl;
+	cout << "long long: \t" << sizeof(ll) << endl;
+	cout << "long double: \t" << sizeof(ld) << endl;
+	cout << "vector<int>: \t" << sizeof(vi) << endl;
+	cout << "func pointer: \t" << sizeof(fn) << endl;
+
+	cout << "**********************************************" << endl;
+	vi.push_back(2);
+	vi.push_back(2);
+	vi.push_back(2);
+	vi.push_back(2);
+	vi.push_back(2);
+	cout << "vector<int>: \t" << sizeof(vi) << endl;
+
+	vector<double> vd;
+	cout << "vector<double>: \t" << sizeof(vd) << endl;
+	vd.push_back(1.0);
+	vd.push_back(1.0);
+	vd.push_back(1.0);
+	vd.push_back(1.0);
+	cout << "vector<double>: \t" << sizeof(vd) << endl;
+
+	cout << "vector<double>::iterator: \t" << sizeof(vector<double>::iterator) << endl;
+
+	string ss;
+	cout << "string: \t" << sizeof(ss) << endl;
+
+	string sh("Hello world!");
+	cout << "string: \t" << sizeof(sh) << endl;
+
+	cout << "------------------SizeOfTest------------------" << endl;
+}

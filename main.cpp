@@ -8,18 +8,21 @@
 
 #include <sys\socket.h>
 #include <pthread.h>
+#include "STL/UnitTest/ValArrayOpsTest.h"
 
 int main()
 {
 	printf("Hello DataStructures\n");
 
-	DequeOpsTest();
+	ValArrayOpsTest<int> vtt;
+	vtt.TestSuite();
+	//DequeOpsTest();
 	//VectorOpsTest();
 	//STLBasicOpsTest();
 	//ListTest();
 	//MapTest();
 	//VectorTest();
-
+	//SizeOfTest();
 	//system("pause");
 	return 0;
 }
